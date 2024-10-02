@@ -17,6 +17,9 @@ interface SpeakerItemProps {
 }
 
 const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
+
+  console.log("sessions is , " , sessions)
+  console.log("speakers are" , speaker)
   return (
     <>
       <IonCard className="speaker-card">

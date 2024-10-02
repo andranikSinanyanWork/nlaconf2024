@@ -79,14 +79,6 @@ const SessionDetail: React.FC<SessionDetailProps> = ({
       <IonContent>
         <div className="ion-padding">
           <h1>{session.name}</h1>
-          {session.tracks.map((track) => (
-            <span
-              key={track}
-              className={`session-track-${track.toLowerCase()}`}
-            >
-              {track}
-            </span>
-          ))}
           <p>{session.description}</p>
           <IonText color="medium">
             {session.timeStart} &ndash; {session.timeEnd}

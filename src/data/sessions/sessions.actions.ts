@@ -2,9 +2,9 @@ import { getConfData } from '../dataApi';
 import { ActionType } from '../../util/types';
 import { ConfState } from './conf.state';
 
-export const loadConfData = () => async (dispatch: React.Dispatch<any>) => {
+export const loadConfData = (index: number) => async (dispatch: React.Dispatch<any>) => {
   dispatch(setLoading(true));
-  const data = await getConfData();
+  const data = await getConfData(index);
   dispatch(setData(data));
   dispatch(setLoading(false));
 };

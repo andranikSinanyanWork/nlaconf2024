@@ -10,9 +10,10 @@ const HAS_LOGGED_IN = 'hasLoggedIn';
 const HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
 const USERNAME = 'username';
 
-export const getConfData = async () => {
+export const getConfData = async (index: number) => {
   const response = await Promise.all([fetch(dataUrl), fetch(locationsUrl)]);
   const responseData = await response[0].json();
+
   const schedule = responseData.schedule[0] as Schedule;
   const sessions = parseSessions(schedule);
   const speakers = responseData.speakers as Speaker[];
@@ -71,8 +72,12 @@ export const setUsernameData = async (username?: string) => {
 
 function parseSessions(schedule: Schedule) {
   const sessions: Session[] = [];
+
   schedule.groups.forEach((g) => {
-    g.sessions.forEach((s) => sessions.push(s));
+    g.sessions.forEach((s) => {
+      console.log(s)
+      sessions.push(s)
+    });
   });
   return sessions;
 }

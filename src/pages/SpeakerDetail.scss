@@ -34,12 +34,14 @@
 
     height: calc(250px + var(--ion-safe-area-top));
 
-    background: center / cover url("/assets/img/speaker-background.png")
+    background: center / cover url("https://drive.google.com/u/0/drive-viewer/AKGpihbdBI-tIxNbI8CWo3FxWwPIowVttWe7XEMH6eWH2VE6fNbhSmacIienLxz1k0Cre2-1QBgYGRjZWMwj0XGCZqmNwgyTXikXmdI=s1600-rw-v1")
       no-repeat;
   }
 
   .speaker-background img {
-    width: 70px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 50%;
     margin-top: calc(-1 * var(--ion-safe-area-top));
   }

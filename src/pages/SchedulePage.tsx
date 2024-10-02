@@ -167,14 +167,14 @@ const SchedulePage: React.FC<SchedulePageProps> = ({
           hide={segment === 'all'}
         />
       </IonContent>
-
+{/* 
       <IonModal
         isOpen={showFilterModal}
         onDidDismiss={() => setShowFilterModal(false)}
         presentingElement={pageRef.current!}
       >
         <SessionListFilter onDismissModal={() => setShowFilterModal(false)} />
-      </IonModal>
+      </IonModal> */}
 
       <ShareSocialFab />
     </IonPage>

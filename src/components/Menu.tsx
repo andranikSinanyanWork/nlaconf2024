@@ -35,7 +35,6 @@ const routes = {
   appPages: [
     { title: 'Schedule', path: '/tabs/schedule', icon: calendarOutline },
     { title: 'Speakers', path: '/tabs/speakers', icon: peopleOutline },
-    { title: 'Map', path: '/tabs/map', icon: mapOutline },
     { title: 'About', path: '/tabs/about', icon: informationCircleOutline },
   ],
   loggedInPages: [
@@ -106,9 +105,6 @@ const Menu: React.FC<MenuProps> = ({
         </IonList>
         <IonList lines="none">
           <IonListHeader>Account</IonListHeader>
-          {isAuthenticated
-            ? renderlistItems(routes.loggedInPages)
-            : renderlistItems(routes.loggedOutPages)}
           <IonItem>
             <IonIcon
               slot="start"
@@ -121,18 +117,6 @@ const Menu: React.FC<MenuProps> = ({
             >
               Dark Mode
             </IonToggle>
-          </IonItem>
-        </IonList>
-        <IonList lines="none">
-          <IonListHeader>Tutorial</IonListHeader>
-          <IonItem
-            button
-            onClick={() => {
-              history.push('/tutorial');
-            }}
-          >
-            <IonIcon slot="start" icon={hammer} />
-            <IonLabel>Show Tutorial</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>

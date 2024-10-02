@@ -94,7 +94,7 @@ const SessionListItem: React.FC<SessionListItemProps> = ({
           <h3>{session.name}</h3>
           <p>
             {session.timeStart}&mdash;&nbsp;
-            {session.timeStart}&mdash;&nbsp;
+            {session.timeEnd}&mdash;&nbsp;
             {session.location}
           </p>
         </IonLabel>

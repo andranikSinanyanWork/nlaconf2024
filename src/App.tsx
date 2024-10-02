@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
 import {
   IonApp,
+  IonButton,
   IonRouterOutlet,
   IonSplitPane,
   setupIonicReact,
@@ -59,7 +60,23 @@ import Tutorial from './pages/Tutorial';
 import HomeOrTutorial from './components/HomeOrTutorial';
 import { Schedule } from './models/Schedule';
 import RedirectToLogin from './components/RedirectToLogin';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBmBhzcKafTlmfkN10iB1B6k-tmJ-Wq5Gk",
+  authDomain: "nlaconf.firebaseapp.com",
+  projectId: "nlaconf",
+  storageBucket: "nlaconf.appspot.com",
+  messagingSenderId: "730496553708",
+  appId: "1:730496553708:web:d8fae0d0b3966600358bc9",
+  measurementId: "G-XL2XNKFF50"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -92,9 +109,10 @@ const IonicApp: React.FC<IonicAppProps> = ({
   loadConfData,
   loadUserData,
 }) => {
+
   useEffect(() => {
     loadUserData();
-    loadConfData();
+    loadConfData(0);
     // eslint-disable-next-line
   }, []);
 
